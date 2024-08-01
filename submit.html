@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Xác nhận hoàn thành</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.70/pdfmake.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.70/vfs_fonts.js"></script>
+</head>
+<body>
+    <div class="sub">
+        <h1>Đã hoàn thành form khảo sát</h1>
+        <p>Thông tin đã được ghi nhận và lưu vào hệ thống</p>
+        <p>Vui lòng click vào nút "Xuất dữ liệu" để nhận và in file pdf khảo sát</p>
+        <button type="button" id="generatePdf">Xuất dữ liệu</button>
+        <button class="btb" onclick="trove()">Trở lại trang chủ</button>
+    </div>
+    <script src="export.js"></script>
+</body>
+</html>

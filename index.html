@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>ĐIỂM HỌC TẬP VÀ SỞ THÍCH MÔN HỌC CỦA HỌC SINH</title>
+	<link rel="stylesheet" href="style.css">
+	<script src="savedata.js" defer></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.70/pdfmake.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.70/vfs_fonts.js"></script>
+</head>
+<body>
+	<div class="content">
+		<h1>PHIẾU KHẢO SÁT HỌC SINH LỚP 5 CHUYỂN CẤP</h1>
+		<form id="pc">
+			<div class="left">
+				<label for="name">Họ và tên</label>
+				<input type="text" id="name" name="name" required>
+				<label for="bd">Ngày tháng năm sinh</label>
+				<input type="date" id="bd" name="bd" required>
+				<label for="email">Email</label>
+				<input type="email" id="email" name="email" required>
+				<label for="tel">Số điện thoại</label>
+				<input type="tel" id="tel" name="tel" required>
+				<label>Chọn nơi ở hiện tại:</label>
+				<select class="form-select-form-select-sm-mb-3" id="city" aria-label=".form-select-sm">
+				<option class="city" value="city" selected>Chọn tỉnh thành</option>           
+				</select>	
+				<b>,</b>  
+				<select class="form-select-form-select-sm-mb-3" id="district" aria-label=".form-select-sm">
+				<option class="district" value="district" selected>Chọn quận huyện</option>
+				</select>
+				<b>,</b>
+				<select class="form-select-form-select-sm-mb-3" id="ward" aria-label=".form-select-sm">
+				<option class="px" value="px">Chọn phường xã</option>
+				</select>
+				<script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"></script>
+				<script type="text/javascript" src="script.js"></script>
+				<label for="ctf">Chứng chỉ tiếng Anh: </label>
+				<select class="ctfm" id="ctf">
+					<option>Staters</option>           
+					<option>Movers</option>           
+					<option>Flyers</option>           
+					<option>KET</option>           
+					<option>PET</option>           
+					<option>FCE</option>   
+					<option>CAE</option>           
+					<option>CPE</option>  
+					<option>IELTS</option>           
+					<option>TOEFL</option>           
+					<option>TOEIC</option>           
+				</select>
+				<h2>Lưu ý:</h2>
+				<ul>
+					<li>Điền đầy đủ thông tin</li>
+					<li>Thông tin về ngày tháng năm sinh nhập theo thứ tự: Ngày, tháng, năm</li>
+					<li>Thông tin về trường học nhập theo mẫu sau: TH <i>(tên trường)</i></li>
+					<li>Trường hợp học sinh học trường quốc tế có thể ghi: <i>Quốc tế</i></li>
+				</ul>
+			</div>  
+			<div class="right">
+				<label for="dt">Điểm thi học kỳ 1</label>
+				<table id="dt">
+					<tr>
+						<th>Môn thi</th>
+						<th>Điểm</th>
+					</tr>
+					<tr>
+						<th>Toán</th>
+						<th>
+							<input type="number" id="toan1" name="toan" step="0.001" required>
+						</th>
+					</tr>
+					<tr>
+						<th>Tiếng Việt</th>
+						<th>
+							<input type="number" id="tv1" name="tv" step="0.001" required>
+						</th>
+					</tr>
+					<tr>
+						<th>Ngoại Ngữ</th>
+						<th>
+							<input type="number" id="nn1" name="nn" step="0.001">
+						</th>
+					</tr>
+				</table>
+				<label for="dt">Điểm thi học kỳ 2</label>
+				<table id="dt">
+					<tr>
+						<th>Môn thi</th>
+						<th>Điểm</th>
+					</tr>
+					<tr>
+						<th>Toán</th>
+						<th>
+							<input type="number" id="toan2" name="toan" step="0.001" required>
+						</th>
+					</tr>
+					<tr>
+						<th>Tiếng Việt</th>
+						<th>
+							<input type="number" id="tv2" name="tv" step="0.001" required>
+						</th>
+					</tr>
+					<tr>
+						<th>Ngoại Ngữ</th>
+						<th>
+							<input type="number" id="nn2" name="nn" step="0.001">
+						</th>
+					</tr>
+				</table>
+				<label for="subjects">Chọn môn học yêu thích:</label>
+                <table id="subjects">
+                    <tr>
+						<th>Môn học</th>
+						<th>Ô chọn</th>
+					</tr>
+					<tr>
+						<th>Toán</th>
+						<th>
+							<input type="checkbox" id="toanyt" name="subjects" value="Toán">
+						</th>
+					</tr>
+					<tr>
+						<th>Ngữ Văn</th>
+						<th>
+							<input type="checkbox" id="nvyt" name="subjects" value="Ngữ Văn">
+						</th>
+					</tr>
+					<tr>
+						<th>Tiếng Anh</th>
+						<th>
+							<input type="checkbox" id="tayt" name="subjects" value="Tiếng Anh">
+						</th>
+					</tr>
+					<tr>
+						<th>Lịch sử và Địa lý</th>
+						<th>
+							<input type="checkbox" id="lsdlyt" name="subjects" value="Lịch sử và Địa lý">
+						</th>
+					</tr>
+					<tr>
+						<th>Âm nhạc</th>
+						<th>
+							<input type="checkbox" id="anyt" name="subjects" value="Âm nhạc">
+						</th>
+					</tr>
+					<tr>
+						<th>Khoa học tự nhiên</th>
+						<th>
+							<input type="checkbox" id="khtnyt" name="subjects" value="Khoa học tự nhiên">
+						</th>
+					</tr>
+					<tr>
+						<th>Hoạt động trải nghiệm hướng nghiệp</th>
+						<th>
+							<input type="checkbox" id="hdyt" name="subjects" value="Hoạt động trải nghiệm hướng nghiệp">
+						</th>
+					</tr>
+					<tr>
+						<th>Giáo dục thể chất</th>
+						<th>
+							<input type="checkbox" id="gdyt" name="subjects" value="Giáo dục thể chất">
+						</th>
+					</tr>
+					<tr>
+						<th>Giáo dục công dân</th>
+						<th>
+							<input type="checkbox" id="gdcdyt" name="subjects" value="Giáo dục công dân">
+						</th>
+					</tr>
+					<tr>
+						<th>Công nghệ</th>
+						<th>
+							<input type="checkbox" id="cnyt" name="subjects" value="Công nghệ">
+						</th>
+					</tr>
+					<tr>
+						<th>Mĩ thuật</th>
+						<th>
+							<input type="checkbox" id="mtyt" name="subjects" value="Mĩ thuật">
+						</th>
+					</tr>
+				</table>
+			</div>
+		</form>
+		<button type="button" onclick="saveData()">Submit</button>
+	</div>
+</body>
+</html>
